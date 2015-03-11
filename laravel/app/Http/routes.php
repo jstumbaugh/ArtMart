@@ -15,6 +15,16 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+//Some test routes
+
+Route::get('starter', function(){
+	return view('starter');
+});
+
+Route::get('hello', function(){
+	return 'Hello World!';
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
