@@ -35,6 +35,7 @@ class CreateDatabase extends Migration {
 			$table->string('description');
 			$table->decimal('price', 10, 2);
 		});
+		
 	}
 
 	/**
