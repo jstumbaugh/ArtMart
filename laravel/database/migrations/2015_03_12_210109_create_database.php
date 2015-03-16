@@ -18,10 +18,10 @@ class CreateDatabase extends Migration {
 			$table->string('name');
 			$table->string('email')->unique();
 			$table->string('password', 60);
-			$table->string('firstname');
-			$table->string('lastname');
-			$table->string('biography');
-			$table->string('homepage');
+			$table->string('firstname')->default('');
+			$table->string('lastname')->default('');
+			$table->string('biography')->default('');
+			$table->string('homepage')->default('');
 			$table->rememberToken();
 			$table->timestamps();
 		});
@@ -32,22 +32,26 @@ class CreateDatabase extends Migration {
 			$table->integer('user_id')->unsigned()->default(0);
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->string('entry');
+			$table->timestamps();
 		});
 		
-		Schema::create('searchhistory', function(Blueprint $table)
+		Schema::create('searchhistories', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('user_id')->unsigned()->default(0);
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->string('query');
 			$table->integer('numresults');
+			$table->timestamps();
 		});
 		
 		Schema::create('licenses', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('acro');
 			$table->string('name');
 			$table->string('url');
+			$table->timestamps();
 		});
 		
 		Schema::create('artworks', function(Blueprint $table)
@@ -58,8 +62,9 @@ class CreateDatabase extends Migration {
 			$table->integer('license_id')->unsigned()->default(0);
 			$table->foreign('license_id')->references('id')->on('licenses');
 			$table->string('title');
-			$table->string('description');
+			$table->string('description')->default('');
 			$table->decimal('price', 10, 2);
+			$table->timestamps();
 		});
 		
 		Schema::create('tags', function(Blueprint $table)
@@ -68,12 +73,14 @@ class CreateDatabase extends Migration {
 			$table->integer('artwork_id')->unsigned()->default(0);
 			$table->foreign('artwork_id')->references('id')->on('artworks');
 			$table->string('name');
+			$table->timestamps();
 		});
 		
 		Schema::create('mediatypes', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
+			$table->timestamps();
 		});
 		
 		Schema::create('media', function(Blueprint $table)
@@ -84,8 +91,8 @@ class CreateDatabase extends Migration {
 			$table->integer('type_id')->unsigned()->default(0);
 			$table->foreign('type_id')->references('id')->on('mediatypes');
 			$table->string('link');
+			$table->timestamps();
 		});
-		
 	}
 
 	/**
@@ -101,8 +108,7 @@ class CreateDatabase extends Migration {
 		Schema::drop('artworks');
 		Schema::drop('licenses');
 		Schema::drop('wishlists');
-		Schema::drop('searchhistory');
+		Schema::drop('searchhistories');
 		Schema::drop('users');
 	}
-
 }

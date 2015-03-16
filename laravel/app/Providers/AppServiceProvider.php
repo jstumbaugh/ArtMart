@@ -29,6 +29,11 @@ class AppServiceProvider extends ServiceProvider {
 			'Illuminate\Contracts\Auth\Registrar',
 			'App\Services\Registrar'
 		);
+		
+		// register laravel generators on local machines, for dev purposes
+		//if ($this->app->environment() == 'local') {
+		//	$this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+		//}
 	}
 
 }
