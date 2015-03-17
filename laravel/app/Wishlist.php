@@ -24,4 +24,15 @@ class Wishlist extends Model {
 	 * @var array
 	 */
 	protected $hidden = [''];
+	
+	/**
+	 * User accessor function. Allows access to
+	 * the user this wishlist entry belongs to.
+	 * 
+	 * @return User model
+	 */
+	public function user()
+	{
+		return $this->belongsTo('\App\User');
+	}
 }

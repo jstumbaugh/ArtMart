@@ -24,4 +24,15 @@ class Tag extends Model {
 	 * @var array
 	 */
 	protected $hidden = [''];
+	
+	/**
+	 * Artwork accessor function. Allows access to all
+	 * artwork using this particular tag.
+	 * 
+	 * @return Artwork model array
+	 */
+	public function artworks()
+	{
+		return $this->hasMany('\App\Artwork');
+	}
 }

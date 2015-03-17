@@ -24,4 +24,15 @@ class MediaType extends Model {
 	 * @var array
 	 */
 	protected $hidden = [''];
+	
+	/**
+	 * Media accessor function. Allows access to all
+	 * media of this particular type.
+	 * 
+	 * @return Media model array
+	 */
+	public function media()
+	{
+		return $this->hasMany('\App\Media');
+	}
 }

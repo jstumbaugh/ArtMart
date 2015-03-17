@@ -24,4 +24,26 @@ class Media extends Model {
 	 * @var array
 	 */
 	protected $hidden = [''];
+	
+	/**
+	 * Artwork accessor function. Allows access to
+	 * the artwork this media belongs to.
+	 * 
+	 * @return Artwork model
+	 */
+	public function artwork()
+	{
+		return $this->belongsTo('\App\Artwork');
+	}
+	
+	/**
+	 * Media Type accessor function. Allows access to
+	 * the media's type.
+	 * 
+	 * @return MediaType model
+	 */
+	public function mediatype()
+	{
+		return $this->belongsTo('\App\MediaType');
+	}
 }

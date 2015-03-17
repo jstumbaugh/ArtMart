@@ -24,4 +24,15 @@ class License extends Model {
 	 * @var array
 	 */
 	protected $hidden = [''];
+	
+	/**
+	 * Artwork accessor function. Allows access to all
+	 * artwork that's under a particular license.
+	 * 
+	 * @return Artwork model array
+	 */
+	public function artworks()
+	{
+		return $this->hasMany('\App\Artwork');
+	}
 }

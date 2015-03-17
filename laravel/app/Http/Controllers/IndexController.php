@@ -29,7 +29,7 @@ class IndexController extends Controller {
 	 */
 	public function index()
 	{
-		return view('index');
+		return view('index', ['artworks' => \App\Artwork::orderBy('created_at')->simplePaginate(12)]);
 	}
 
 }

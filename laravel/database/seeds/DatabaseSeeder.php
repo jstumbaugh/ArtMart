@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('LicenseTableSeeder');
 		$this->call('MediaTypeTableSeeder');
+		$this->call('SampleArtworkSeeder');
 	}
 }

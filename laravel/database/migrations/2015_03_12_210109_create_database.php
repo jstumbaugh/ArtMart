@@ -90,7 +90,10 @@ class CreateDatabase extends Migration {
 			$table->foreign('artwork_id')->references('id')->on('artworks');
 			$table->integer('type_id')->unsigned()->default(0);
 			$table->foreign('type_id')->references('id')->on('mediatypes');
+			$table->string('name')->default('');
+			$table->integer('order')->default(0);
 			$table->string('link');
+			$table->string('thumb')->default('');
 			$table->timestamps();
 		});
 	}

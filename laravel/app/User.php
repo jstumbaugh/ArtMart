@@ -30,4 +30,37 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+	
+	/**
+	 * Artwork accessor function. Allows access to all
+	 * artwork posted by this user.
+	 * 
+	 * @return Artwork model array
+	 */
+	public function artworks()
+	{
+		return $this->hasMany('\App\Artwork');
+	}
+	
+	/**
+	 * Search history accessor function. Allows access to
+	 * user's search history.
+	 * 
+	 * @return SearchHistory model array
+	 */
+	public function searchhistory()
+	{
+		return $this->hasMany('\App\SearchHistory');
+	}
+	
+	/**
+	 * Wishlist history accessor function. Allows access to
+	 * user's wishlist.
+	 * 
+	 * @return Wishlist model array
+	 */
+	public function wishlist()
+	{
+		return $this->hasMany('\App\Wishlist');
+	}
 }
