@@ -1,19 +1,24 @@
 @extends('app')
 
 @section('content')
-    <!-- TODO: actual marketplace content, o'course! -->
-	<div class="jumbotron">
-		<div class="container">
-			<h1>ArtMart Marketplace</h1>
-			<p>Stuff goes here!</p>
-			<p><a class="btn btn-primary btn-lg" href="#" role="button">Register &raquo;</a></p>
-		</div>
-	</div>
-	
 	<div class="container">
-		<h3>ARTWORK PLACEHOLDER LIST THING:</h3>
-		@foreach($artworks as $artwork)
-			<p><a href="{{ $artwork->media->first()->link }}">{{ $artwork->title }}</a></p>
+		<div class="page-header">
+			<h1>ArtMart Marketplace</h1>
+			<p class="lead">Stuff goes here!</p>
+		</div>
+		@foreach(array_chunk($artworks->all(), 4) as $artworkRow)
+			<div class="row">
+				@foreach ($artworkRow as $artwork)
+					<div class="col-md-3">
+						<h3>{{ $artwork->title }}</h3>
+						<a href="{{ $artwork->media->first()->link }}">
+							<img src="{{ $artwork->media->first()->thumb }}"/>
+						</a>
+						<p>by {{ $artwork->user->name }}</p>
+						<p><b>{{ $artwork->license->acro }}</b> - ${{ $artwork->price }}</p>
+					</div>
+				@endforeach
+			</div>
 		@endforeach
 	
 		{!! $artworks->render() !!}

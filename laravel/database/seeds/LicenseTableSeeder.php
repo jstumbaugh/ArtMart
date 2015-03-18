@@ -14,7 +14,7 @@ class LicenseTableSeeder extends Seeder {
 		DB::table('licenses')->delete();
 		$licenses = array(
 			[ 'id'   => 1
-			, 'acro' => 'N/A'
+			, 'acro' => ''
 			, 'name' => 'All Rights Reserved'
 			, 'url'  => ''
 			],
