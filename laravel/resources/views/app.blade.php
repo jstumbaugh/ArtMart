@@ -30,7 +30,7 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="/auth/login">Login</a></li>
+						<li><a href="/auth/login">Login</a></li> 
 						<li><a href="/auth/register">Register</a></li>
 					@else
 						<li class="dropdown">
