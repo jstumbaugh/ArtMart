@@ -19,6 +19,11 @@ Route::get('home',
 ,	'uses' => 'HomeController@index'
 ]);
 
+Route::get('artwork/{id}',
+[	'as'   => 'artwork'
+,	'uses' => 'ArtworkController@index'
+]);
+
 Route::controllers(
 [	'auth'     => 'Auth\AuthController'
 ,	'password' => 'Auth\PasswordController'

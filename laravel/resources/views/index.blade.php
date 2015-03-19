@@ -14,7 +14,7 @@
 								<h3>{{ $artwork->title }}</h3>
 							</div>
 							<div class="panel-body">
-								<a href="{{ $artwork->media->first()->link }}">
+								<a href="{{ URL::route('index', array()) }}/artwork/{{ $artwork->id }}">
 									<img src="{{ $artwork->media->first()->thumb }}"/>
 								</a>
 								<p>by {{ $artwork->user->name }}</p>
