@@ -8,7 +8,7 @@
 		@foreach(array_chunk($artworks->all(), 4) as $artworkRow)
 			<div class="row">
 				@foreach ($artworkRow as $artwork)
-					<div class="col-sm-3">
+					<div class="col-md-3">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3>{{ $artwork->title }}</h3>
