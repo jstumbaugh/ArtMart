@@ -9,18 +9,18 @@
 			<div class="row">
 				@foreach ($artworkRow as $artwork)
 					<div class="col-md-3">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h3>{{ $artwork->title }}</h3>
-							</div>
-							<div class="panel-body">
-								<a href="{{ URL::route('index', array()) }}/artwork/{{ $artwork->id }}">
+						<a href="{{ URL::route('index', array()) }}/artwork/{{ $artwork->id }}">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3>{{ $artwork->title }}</h3>
+								</div>
+								<div class="panel-body">
 									<img src="{{ $artwork->media->first()->thumb }}"/>
-								</a>
-								<p>by {{ $artwork->user->name }}</p>
-								<p><b>{{ $artwork->license->acro }}</b> - ${{ $artwork->price }}</p>
+									<p>by {{ $artwork->user->name }}</p>
+									<p><b>{{ $artwork->license->acro }}</b> - ${{ $artwork->price }}</p>
+								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 				@endforeach
 			</div>
