@@ -1,1 +1,3 @@
 ### things to ignore
+
+laravel/config/database.php
