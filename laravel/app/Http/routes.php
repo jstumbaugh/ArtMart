@@ -29,7 +29,12 @@ Route::controllers(
 ,	'password' => 'Auth\PasswordController'
 ]);
 
-Route::get('upload', function() {
+Route::get('upload',
+	[ 'as' 		=> 'upload'
+	, 'uses' 	=> 'UploadController@index'
+	]);
+
+/*Route::get('upload', function() {
   return View::make('pages.upload');
 });
-Route::post('apply/upload', 'ApplyController@upload');
+Route::post('apply/upload', 'UploadController@upload');*/
