@@ -1,3 +1,7 @@
+html {
+	overflow-y:scroll;
+}
+
 body {
 	background-color: #E8E8E8;
 	font-family: "Montserrat",helvetica,arial,sans-serif;
@@ -27,16 +31,21 @@ body {
 .navbar-default a:hover { color: #FF0000 !important; }
 .navbar-default a:active { color: #FF0000 !important; }
 
-.navbar-default input
+.navbar .navbar-form
 {
 	font-size: 12px;
 	font-weight: normal;
 	font-variant: normal;
-	margin-top: 12px;
+	padding: 0 15px;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
-
 .btn {
 	box-shadow: 2px 2px 2px #AAAAAA;
+}
+.navbar-default .btn {
+	box-shadow: none;
 }
 
 .page-header
@@ -70,6 +79,7 @@ body {
 }
 .panel-default .panel-heading h3
 {
+	font-size: 14pt;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
@@ -86,8 +96,8 @@ body {
 	margin: auto;
 }
 
-.panel-linkbox a:link { text-color #000000; }
-.panel-linkbox a:visited { text-color #000000; }
+.panel-linkbox a:link { color: #000000; }
+.panel-linkbox a:visited { color: #000000; }
 .panel-linkbox a:hover { text-decoration: none !important; }
 .panel-linkbox a:hover .panel-heading
 {
@@ -131,6 +141,28 @@ body {
 	vertical-align: middle;
 	display: inline-block;
 	height: 100%;
+}
+.carousel-indicators li {
+	background: #888;
+}
+
+.carousel-indicators .active {
+	background: #000;
+}
+
+.modal {
+	text-align: center;
+}
+.modal:before {
+	display: inline-block;
+	vertical-align: middle;
+	content: " ";
+	height: 100%;
+}
+.modal-dialog {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
 }
 
 #lightbox .modal-content {

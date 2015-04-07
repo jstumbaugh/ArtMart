@@ -16,25 +16,43 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-collapse">
 					<span class="sr-only">Toggle Navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="{{ URL::route('index', array()) }}">ARTMART</a>
+				<div class = "visible-xs">
+					<form class="navbar-form" role="search" name="search-collapsed">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" />
+							<div class="input-group-btn">
+								<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="main-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ URL::route('index', array()) }}">Browse</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Browse<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ URL::route('index', array()) }}">Marketplace</a></li>
+							<li><a href="{{ URL::route('index', array()) }}/artists">Artists</a></li>
+						</ul>
+					</li>
 				</ul>
-
 				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<form name = "search-form">
-							<i class="fa fa-search"></i>
-							<input type="text" name="search"/>
+					<li class="hidden-xs">
+						<form class="navbar-form" role="search" name="search-main">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" />
+								<div class="input-group-btn">
+									<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+								</div>
+							</div>
 						</form>
 					</li>
 					@if (Auth::guest())

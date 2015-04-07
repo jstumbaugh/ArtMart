@@ -13,7 +13,7 @@
 			<ol class="carousel-indicators">
 				<?php $i=0; ?>
 				@foreach ($medialist as $media)
-					<li data-target="#carousel-media" data-slide-to="{{ $i }}" @if ($i == 0) {{'class="active"'}} @endif></li>
+					<li data-target="#carousel-media" data-slide-to="{{ $i }}" class="@if ($i == 0) {{'active'}} @endif"></li>
 					<?php $i++; ?>
 				@endforeach
 			</ol>
@@ -68,7 +68,7 @@
 		</div>
 	</div>
 </div>
-<div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="lightbox" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
 		<div class="modal-content">

@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container">
 		<div class="page-header">
-			<h1>THE MARKETPLACE</h1>
+			<h1>NEWEST ART</h1>
 		</div>
 		@foreach(array_chunk($artworks->all(), 4) as $artworkRow)
 			<div class="row">
