@@ -1,0 +1,8 @@
+select * from artworks where description like '%weapon%' and title like '%weapon%';
+// add these results to final set
+
+select * from artworks where title like '%weapon%' and id not in (finalSetIDs);
+// add these results to final set
+
+select * from artworks where description like '%weapon%' and id not in (finalSetIDs);
+// add these results to final set
