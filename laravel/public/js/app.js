@@ -1,5 +1,8 @@
-// from http://bootsnipp.com/snippets/featured/bootstrap-lightbox
+
 $(document).ready(function() {
+	// Initialize lightboxes.
+	// from http://bootsnipp.com/snippets/featured/bootstrap-lightbox
+	
 	var $lightbox = $('#lightbox');
 	
 	$('[data-target="#lightbox"]').on('click', function(event) {
@@ -22,5 +25,17 @@ $(document).ready(function() {
 			
 		$lightbox.find('.modal-dialog').css({'width': $img.width()});
 		$lightbox.find('.close').removeClass('hidden');
+	});
+	
+	// Enable mobile swipe controls for carousels.
+	
+	var $carousel = $('.carousel');
+	
+	$carousel.swiperight(function() {  
+		$(this).carousel('prev');
+	});
+	
+	$carousel.swipeleft(function() {  
+		$(this).carousel('next');
 	});
 });

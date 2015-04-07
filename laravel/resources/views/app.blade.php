@@ -10,7 +10,6 @@
 	<link rel="stylesheet" type='text/css' href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/bootstrap.min.css">
 	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/app.css">
-
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -36,13 +35,15 @@
 			</div>
 			<div class="collapse navbar-collapse" id="main-collapse">
 				<ul class="nav navbar-nav">
-					<li class="dropdown">
+					<li class="dropdown hidden-xs">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Browse<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="{{ URL::route('index', array()) }}">Marketplace</a></li>
 							<li><a href="{{ URL::route('index', array()) }}/artists">Artists</a></li>
 						</ul>
 					</li>
+					<li class="visible-xs"><a href="{{ URL::route('index', array()) }}">Marketplace</a></li>
+					<li class="visible-xs"><a href="{{ URL::route('index', array()) }}/artists">Artists</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden-xs">

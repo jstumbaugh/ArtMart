@@ -79,16 +79,3 @@
 	</div>
 </div>
 @stop
-
-@section ('scripts')
-<script>
-	$(document).ready(function() {  
-		$("#carousel-media").swiperight(function() {  
-			$(this).carousel('prev');  
-		});  
-		$("#carousel-media").swipeleft(function() {  
-			$(this).carousel('next');  
-		});  
-	});  
-</script>
-@stop

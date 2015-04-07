@@ -7,36 +7,40 @@ body {
 	font-family: "Montserrat",helvetica,arial,sans-serif;
 }
 
-.left {
+.aleft {
 	float: left;
 }
-.right {
+.aright {
 	float: right;
 }
 
-.navbar-default {
+.navbar {
 	margin-top: 20px;
 	padding-left: 90px;
 	padding-right: 90px;
 }
 @media (max-width: 979px) {
-	.navbar-default {
+	.navbar {
 		padding-left: 0px;
 		padding-right: 0px;
 		margin-top: 0px;
 	}
+	.navbar .nav {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
 }
-.navbar-default {
+.navbar {
 	background-color: #FFFFFF;
 	box-shadow: 2px 2px 2px #AAAAAA;
 	font-variant: small-caps;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
-.navbar-default a:link { color: #000000 !important; }
-.navbar-default a:visited { color: #000000 !important; }
-.navbar-default a:hover { color: #FF0000 !important; }
-.navbar-default a:active { color: #FF0000 !important; }
+.navbar a:link { color: #000000 !important; }
+.navbar a:visited { color: #000000 !important; }
+.navbar a:hover { color: #FF0000 !important; }
+.navbar a:active { color: #FF0000 !important; }
 
 .navbar .navbar-form
 {
@@ -51,7 +55,7 @@ body {
 .btn {
 	box-shadow: 2px 2px 2px #AAAAAA;
 }
-.navbar-default .btn {
+.navbar .btn {
 	box-shadow: none;
 }
 
