@@ -9,7 +9,7 @@
 				</a>
 			</h1>
 		</div>
-		<div id="carousel-media" class="carousel slide" data-ride="carousel">
+		<div id="carousel-media" class="carousel slide" data-ride="carousel" data-interval="false">
 			<ol class="carousel-indicators">
 				<?php $i=0; ?>
 				@foreach ($medialist as $media)
@@ -78,4 +78,17 @@
 		</div>
 	</div>
 </div>
+@stop
+
+@section ('scripts')
+<script>
+	$(document).ready(function() {  
+		$("#carousel-media").swiperight(function() {  
+			$(this).carousel('prev');  
+		});  
+		$("#carousel-media").swipeleft(function() {  
+			$(this).carousel('next');  
+		});  
+	});  
+</script>
 @stop

@@ -18,8 +18,15 @@
 									<div class="panel-image">
 										<img src="{{ $artwork->media->first()->thumb }}"/>
 									</div>
-									<p>by {{ $artwork->user->name }}</p>
-									<p><b>{{ $artwork->license->acro }}</b> - ${{ $artwork->price }}</p>
+									<div class="panel-description">
+										<ul>
+											<li>by <b>{{ $artwork->user->name }}</b></li>
+											<li>
+												<span class="left">{{ $artwork->license->acro }}</span>
+												<span class="right"><b>${{ $artwork->price }}</b></span>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</a>

@@ -7,6 +7,13 @@ body {
 	font-family: "Montserrat",helvetica,arial,sans-serif;
 }
 
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
 .navbar-default {
 	margin-top: 20px;
 	padding-left: 90px;
@@ -65,11 +72,11 @@ body {
 	margin-bottom: 10px;
 }
 
-.panel-default
+.panel
 {
 	box-shadow: 2px 2px 2px #AAAAAA;
 }
-.panel-default .panel-heading
+.panel .panel-heading
 {
 	background: linear-gradient(to bottom, #FFFFFF, #EEEEEE);
 	color: #000000;
@@ -77,23 +84,33 @@ body {
 	font-variant: small-caps;
 	font-weight: bold;
 }
-.panel-default .panel-heading h3
+.panel .panel-heading h3
 {
 	font-size: 14pt;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
-.panel-default .panel-image
+.panel .panel-image
 {
 	overflow: hidden;
 	background-color: #E8E8E8;
 	border: 1px solid #888888;
 	border-radius: 5px;
 }
-.panel-default .panel-image img
+.panel .panel-image img
 {
 	display: block;
 	margin: auto;
+}
+.panel .panel-description
+{
+	margin-top: 5px;
+}
+.panel .panel-description ul
+{
+	list-style-type: none;
+	margin-bottom: 0px;
+	padding-left: 10px;
 }
 
 .panel-linkbox a:link { color: #000000; }
