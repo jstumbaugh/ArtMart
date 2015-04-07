@@ -35,6 +35,10 @@ body {
 	margin-top: 12px;
 }
 
+.btn {
+	box-shadow: 2px 2px 2px #AAAAAA;
+}
+
 .page-header
 {
 	margin-top: 0px;
@@ -44,6 +48,12 @@ body {
 	font-variant: small-caps;
 	font-weight: bold;
 	color: #000000;
+}
+
+.container-spacer
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .panel-default
@@ -86,4 +96,58 @@ body {
 .panel-linkbox a:hover .panel-body
 {
 	background: #F4F4F4;
+}
+.row-equal, .row-equal > div[class*='col-'] {  
+	display: -webkit-flex;
+	display: flex;
+	flex:1 1 auto;
+}
+.row-equal .panel {
+	width: 100%;
+}
+@media (max-width: 768px) {
+	.row-equal, .row-equal > div[class*='col-'] {  
+		display: block;
+		flex:none;
+	}
+	.row-equal .panel {
+		width: auto;
+	}
+}
+
+.carousel-imagebox
+{
+	text-align: center;
+	white-space: nowrap;
+	height: 300px;
+} 
+.carousel-imagebox img
+{
+	vertical-align: middle;
+	max-width: 100%;
+	max-height: 100%;
+}
+.carousel-helper {
+	vertical-align: middle;
+	display: inline-block;
+	height: 100%;
+}
+
+#lightbox .modal-content {
+	display: inline-block;
+	text-align: center;   
+}
+
+#lightbox .close {
+	opacity: 1;
+	color: rgb(255, 255, 255);
+	background-color: rgb(25, 25, 25);
+	padding: 5px 8px;
+	border-radius: 30px;
+	border: 2px solid rgb(255, 255, 255);
+	position: absolute;
+	top: -15px;
+	right: -55px;
+	
+	z-index:1032;
 }

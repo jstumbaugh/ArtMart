@@ -3,33 +3,79 @@
 @section('content')
 	<div class="container">
 		<div class="page-header">
-			<h1>{{ $artwork->title }}</h1>
-			<p class="lead">by {{ $author->name }}</p>
+			<h1>{{ $artwork->title }} <span class="lead">by</span>
+				<a href="{{ URL::route('index', array()) }}/user/{{$author->name}}">
+					{{ $author->name }}
+				</a>
+			</h1>
 		</div>
-		<div class="row">
-			@foreach ($medialist as $media)
-				<div class="col-sm-3">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<a href="{{ $media->link }}" target="_blank">
-								<img src="{{ $media->thumb }}"/>
+		<div id="carousel-media" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<?php $i=0; ?>
+				@foreach ($medialist as $media)
+					<li data-target="#carousel-media" data-slide-to="{{ $i }}" @if ($i == 0) {{'class="active"'}} @endif></li>
+					<?php $i++; ?>
+				@endforeach
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<?php $i=0; ?>
+				@foreach ($medialist as $media)
+					<div class="item @if ($i == 0) {{'active'}} @endif">
+						<div class="carousel-imagebox">
+							<span class="carousel-helper"></span>
+							<a href="#" data-toggle="modal" data-target="#lightbox">
+								<img src="{{ $media->link }}" alt="...">
 							</a>
 						</div>
 					</div>
-				</div>
-			@endforeach
-		</div>
-		<div class="row">
-			<div class = "col-sm-12">
-				<p><b>License</b>: <a href="{{ $license->url }}">
-					{{ $license->name }} ({{ $license->acro }})
-				</a></p>
-				<p><b>Price</b>: ${{ $artwork->price }}</p>
+					<?php $i++; ?>
+				@endforeach
 			</div>
-			<p>{{ $artwork->description }}</p>
-			<a href="{{ URL::route('index', array()) }}" class="btn btn-default btn-sm" role="button">
-				<< Back to Browse
+			<a class="left carousel-control" href="#carousel-media" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-media" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
 			</a>
 		</div>
 	</div>
+	<div class="container container-spacer">
+		<div class="row row-equal">
+			<div class="col-sm-5 col-sm-push-7">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<p><b>License</b>: <a href="{{ $license->url }}">
+							{{ $license->name }} @if($license->acro != "") ({{ $license->acro }}) @endif
+						</a></p>
+						<p><b>Price</b>: ${{ $artwork->price }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-7 col-sm-pull-5">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<p>{{ $artwork->description }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<a href="{{ URL::route('index', array()) }}" class="btn btn-default btn-md btn-block" role="button">&lt;&lt; Back</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
+		<div class="modal-content">
+			<div class="modal-body">
+				<img src="" alt="" />
+			</div>
+		</div>
+	</div>
+</div>
 @stop
