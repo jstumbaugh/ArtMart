@@ -24,15 +24,25 @@ Route::get('artwork/{id}',
 ,	'uses' => 'ArtworkController@index'
 ]);
 
+Route::get('user/{name}',
+[	'as'   => 'artist'
+,	'uses' => 'ArtistController@index'
+]);
+
+Route::get('artists',
+[	'as'   => 'people'
+,	'uses' => 'PeopleController@index'
+]);
+
+Route::get('upload',
+[	'as'   => 'upload'
+,	'uses' => 'UploadController@index'
+]);
+
 Route::controllers(
 [	'auth'     => 'Auth\AuthController'
 ,	'password' => 'Auth\PasswordController'
 ]);
-
-Route::get('upload',
-	[ 'as' 		=> 'upload'
-	, 'uses' 	=> 'UploadController@index'
-	]);
 
 /*Route::get('upload', function() {
   return View::make('pages.upload');

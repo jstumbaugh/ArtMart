@@ -17,30 +17,15 @@ class ArtworkController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
-		//$this->middleware('guest');
-	}
-	
-	/**
-	 *
-	 */
-//	public function boot(Router $router)
-//	{
-//		parent::boot($router);
-//		$router->model('artwork', '\App\Artwork');
-//	}
+	public function __construct() {}
 
 	/**
-	 * Show the main marketplace.
+	 * Show the art view page.
 	 *
 	 * @return Response
 	 */
 	public function index($id)
 	{
-		//$artwork = \App\Artwork::get($artid);
-		//$artwork =  $this->artwork->find($id);
-		//$artwork = $id;
 		$artwork = \App\Artwork::where('id', '=', $id)->first();
 		return view('artwork',
 		[	'artwork'   => $artwork

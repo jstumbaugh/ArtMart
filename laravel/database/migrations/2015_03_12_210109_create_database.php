@@ -20,8 +20,9 @@ class CreateDatabase extends Migration {
 			$table->string('password', 60);
 			$table->string('firstname')->default('');
 			$table->string('lastname')->default('');
-			$table->string('biography')->default('');
-			$table->string('homepage')->default('');
+			$table->text('biography')->default('');
+			$table->text('homepage')->default('');
+			$table->text('avatar_url')->default('');
 			$table->rememberToken();
 			$table->timestamps();
 		});
@@ -50,7 +51,7 @@ class CreateDatabase extends Migration {
 			$table->increments('id');
 			$table->string('acro');
 			$table->string('name');
-			$table->string('url');
+			$table->text('url');
 			$table->timestamps();
 		});
 		
@@ -62,7 +63,7 @@ class CreateDatabase extends Migration {
 			$table->integer('license_id')->unsigned()->default(0);
 			$table->foreign('license_id')->references('id')->on('licenses');
 			$table->string('title');
-			$table->string('description')->default('');
+			$table->text('description')->default('');
 			$table->decimal('price', 10, 2);
 			$table->timestamps();
 		});
@@ -92,8 +93,8 @@ class CreateDatabase extends Migration {
 			$table->foreign('type_id')->references('id')->on('mediatypes');
 			$table->string('name')->default('');
 			$table->integer('order')->default(0);
-			$table->string('link');
-			$table->string('thumb')->default('');
+			$table->text('link');
+			$table->text('thumb')->default('');
 			$table->timestamps();
 		});
 	}

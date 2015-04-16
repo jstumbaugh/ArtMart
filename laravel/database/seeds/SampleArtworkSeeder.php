@@ -14,19 +14,25 @@ class SampleArtworkSeeder extends Seeder {
 		// Sample users; need some artists to post some art!
 		DB::table('users')->delete();
 		$users = array(
-			[ 'id'        => 1
-			, 'name'      => 'Eriance'
-			, 'email'     => 'eriance@fakemail.net'
-			, 'password'  => 'TEST'
-			, 'firstname' => 'Eric'
-			, 'lastname'  => 'Ou'
+			[ 'id'         => 1
+			, 'name'       => 'Eriance'
+			, 'email'      => 'eriance@fakemail.net'
+			, 'password'   => 'TEST'
+			, 'firstname'  => 'Eric'
+			, 'lastname'   => 'Ou'
+			, 'biography'  => 'I am a sentient mushroom person who makes art and things. To be perfectly frank, this particular biography entry is rather silly, but there needs to be some text here to test out the pages, so here we go! Huzzah!'
+			, 'homepage'   => 'http://amuscaria.deviantart.com/'
+			, 'avatar_url' => 'http://forum.zdoom.org/download/file.php?avatar=677_1401943690.png'
 			],
-			[ 'id'        => 2
-			, 'name'      => 'Cage'
-			, 'email'     => 'cage@fakemail.net'
-			, 'password'  => 'TEST'
-			, 'firstname' => 'Aleksander'
-			, 'lastname'  => 'Kowalzcyk'
+			[ 'id'         => 2
+			, 'name'       => 'Cage'
+			, 'email'      => 'cage@fakemail.net'
+			, 'password'   => 'TEST'
+			, 'firstname'  => 'Aleksander'
+			, 'lastname'   => 'Kowalzcyk'
+			, 'biography'  => 'THIS SURE IS A USER BIOGRAPHY FOR A PERSON'
+			, 'homepage'   => 'http://ccorner.duke4.net/'
+			, 'avatar_url' => ''
 			],
 		);
 		DB::table('users')->insert($users);

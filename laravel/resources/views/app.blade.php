@@ -75,6 +75,17 @@
 
 	@yield('content')
 	
+	<div id="lightbox" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
+			<div class="modal-content">
+				<div class="modal-body">
+					<img src="" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="{{ URL::route('index', array()) }}/js/jquery.mobile.custom.min.js"></script>
 	<script src="{{ URL::route('index', array()) }}/js/bootstrap.min.js"></script>
