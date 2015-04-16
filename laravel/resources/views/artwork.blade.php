@@ -63,7 +63,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-2">
-				<a href="{{ URL::route('index', array()) }}" class="btn btn-default btn-md btn-block" role="button">&lt;&lt; Back</a>
+				<a href="{{ URL::previous() }}" class="btn btn-default btn-md btn-block" role="button">&lt;&lt; Back</a>
 			</div>
 		</div>
 	</div>

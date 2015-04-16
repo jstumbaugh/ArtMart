@@ -16,11 +16,7 @@ class IndexController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
-		//[JM] Commenting this out for now; think this means the page is guests-only, which sucks.
-		//$this->middleware('guest');
-	}
+	public function __construct() {}
 
 	/**
 	 * Show the main marketplace.
@@ -30,7 +26,8 @@ class IndexController extends Controller {
 	public function index()
 	{
 		return view('index',
-		[	'artworks' => \App\Artwork::orderBy('created_at', 'desc')->simplePaginate(20)
+		[	'artworks'    => \App\Artwork::newest()->get() #->simplePaginate(20)
+		,	'artworkshot' => \App\Artwork::hottest()->get()
 		]);
 	}
 

@@ -181,6 +181,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 1
 			, 'artwork_id' => 1
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/dF2buzS.png'
 			, 'thumb'      => 'http://i.imgur.com/ktQue46.png'
@@ -188,6 +189,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 2
 			, 'artwork_id' => 2
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/Dzi9mV9.png'
 			, 'thumb'      => 'http://i.imgur.com/we6hLPG.png'
@@ -195,6 +197,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 3
 			, 'artwork_id' => 3
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/Y9VARi3.png'
 			, 'thumb'      => 'http://i.imgur.com/zh5RDNC.png'
@@ -202,6 +205,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 4
 			, 'artwork_id' => 4
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/czOFgOQ.png'
 			, 'thumb'      => 'http://i.imgur.com/qKVAbQy.png'
@@ -209,6 +213,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 5
 			, 'artwork_id' => 5
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/zW7LGCQ.png'
 			, 'thumb'      => 'http://i.imgur.com/mey7opp.png'
@@ -216,6 +221,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 6
 			, 'artwork_id' => 6
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/iyS3MrD.png'
 			, 'thumb'      => 'http://i.imgur.com/fLjFzzM.png'
@@ -223,6 +229,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 7
 			, 'artwork_id' => 7
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet #1'
 			, 'link'       => 'http://i.imgur.com/w8RbGEy.png'
 			, 'thumb'      => 'http://i.imgur.com/X1lnUZS.png'
@@ -230,6 +237,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 8
 			, 'artwork_id' => 7
 			, 'type_id'    => 1
+			, 'order'      => 2
 			, 'name'       => 'Sprite Sheet #2'
 			, 'link'       => 'http://i.imgur.com/gFFDRAQ.png'
 			, 'thumb'      => 'http://i.imgur.com/PJnq1JO.png'
@@ -237,6 +245,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 9
 			, 'artwork_id' => 8
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/zufRy3T.png'
 			, 'thumb'      => 'http://i.imgur.com/VfPUNZ6.png'
@@ -244,6 +253,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 10
 			, 'artwork_id' => 9
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/jxflxIj.png'
 			, 'thumb'      => 'http://i.imgur.com/f8Q5Zlv.png'
@@ -251,6 +261,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 11
 			, 'artwork_id' => 10
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/xcVFLDB.png'
 			, 'thumb'      => 'http://i.imgur.com/x1jw1ob.png'
@@ -258,6 +269,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 12
 			, 'artwork_id' => 11
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/g1XXNRf.png'
 			, 'thumb'      => 'http://i.imgur.com/ztygeQI.png'
@@ -265,6 +277,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 13
 			, 'artwork_id' => 12
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/fAZlUe5.png'
 			, 'thumb'      => 'http://i.imgur.com/y6Y5FYc.png'
@@ -272,6 +285,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 14
 			, 'artwork_id' => 13
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/jsbS2CI.png'
 			, 'thumb'      => 'http://i.imgur.com/UOuYrOs.png'
@@ -279,6 +293,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 15
 			, 'artwork_id' => 14
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/0Jm9L3M.png'
 			, 'thumb'      => 'http://i.imgur.com/D2nDZph.png'
@@ -286,6 +301,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 16
 			, 'artwork_id' => 15
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/eGTDfr3.png'
 			, 'thumb'      => 'http://i.imgur.com/YZkkvw3.png'
@@ -293,6 +309,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 17
 			, 'artwork_id' => 16
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Sheet'
 			, 'link'       => 'http://i.imgur.com/y5gcwnp.png'
 			, 'thumb'      => 'http://i.imgur.com/VIVCkm9.png'
@@ -300,6 +317,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 18
 			, 'artwork_id' => 17
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Preview'
 			, 'link'       => 'http://i.imgur.com/VrqQood.png'
 			, 'thumb'      => 'http://i.imgur.com/6CBwdAn.png'
@@ -307,6 +325,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 19
 			, 'artwork_id' => 18
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Preview'
 			, 'link'       => 'http://i.imgur.com/PBCEZ3l.png'
 			, 'thumb'      => 'http://i.imgur.com/KKRD4Qm.png'
@@ -314,6 +333,7 @@ class SampleArtworkSeeder extends Seeder {
 			[ 'id'         => 20
 			, 'artwork_id' => 19
 			, 'type_id'    => 1
+			, 'order'      => 1
 			, 'name'       => 'Sprite Preview'
 			, 'link'       => 'http://i.imgur.com/awqnqBU.png'
 			, 'thumb'      => 'http://i.imgur.com/3ZKkntM.png'

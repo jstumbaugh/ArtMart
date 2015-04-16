@@ -58,7 +58,7 @@
 		<div id="carousel-artwork-hot" class="carousel slide" data-ride="carousel" data-interval="false">
 			<div class="carousel-inner" role="listbox">
 				<?php $i=0; ?>
-				@foreach(array_chunk($artworks->all(), 4) as $artworkRow)
+				@foreach(array_chunk($artworkshot->all(), 4) as $artworkRow)
 					<div class="row item @if ($i == 0) {{'active'}} @endif">
 						@foreach ($artworkRow as $artwork)
 							<div class="col-md-3 panel-linkbox">

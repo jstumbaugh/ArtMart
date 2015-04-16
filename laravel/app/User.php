@@ -39,7 +39,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	public function artworks()
 	{
-		return $this->hasMany('\App\Artwork');
+		// [JM] TODO: implement some sort of better "rank weight" based on purchases and views?
+		return $this->hasMany('\App\Artwork')->orderBy('num_purchases', 'desc')->orderBy('num_views', 'desc')->orderBy('created_at', 'desc');
 	}
 	
 	/**
@@ -62,5 +63,25 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function wishlist()
 	{
 		return $this->hasMany('\App\Wishlist');
+	}
+	
+	/**
+	 * Total artwork views accessor.
+	 *
+	 * @return Total number of artwork views for this artist
+	 */
+	public function total_views()
+	{
+		return $this->artworks()->sum('num_views');
+	}
+	
+	/**
+	 * Total artwork purchases accessor.
+	 * 
+	 * @return Total number of artwork purchases for this artist
+	 */
+	public function total_purchases()
+	{
+		return $this->artworks()->sum('num_purchases');
 	}
 }

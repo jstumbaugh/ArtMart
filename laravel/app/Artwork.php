@@ -68,4 +68,25 @@ class Artwork extends Model {
 	{
 		return $this->hasMany('\App\Media')->orderBy('order', 'asc');
 	}
+	
+	/**
+	 * "Newest" scope. Returns latest art by post date.
+	 * 
+	 * @return Hottest query
+	 */
+	public function scopeNewest($query)
+	{
+		return $query->orderBy('created_at', 'desc');
+	}
+	
+	/**
+	 * "Hottest" scope. Returns "top" art by looking at
+	 * number of views/purchase in addition to date.
+	 * 
+	 * @return Hottest query
+	 */
+	public function scopeHottest($query)
+	{
+		return $query->orderBy('num_purchases', 'desc')->orderBy('num_views', 'desc')->orderBy('created_at', 'desc');
+	}
 }

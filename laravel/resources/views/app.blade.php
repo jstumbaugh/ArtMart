@@ -9,6 +9,7 @@
 	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Montserrat'>
 	<link rel="stylesheet" type='text/css' href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/bootstrap.min.css">
+	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/bootstrap-tagsinput.min.css">
 	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/app.css">
 </head>
 <body>
@@ -89,6 +90,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="{{ URL::route('index', array()) }}/js/jquery.mobile.custom.min.js"></script>
 	<script src="{{ URL::route('index', array()) }}/js/bootstrap.min.js"></script>
+	<script src="{{ URL::route('index', array()) }}/js/bootstrap-tagsinput.min.js"></script>
 	<script src="{{ URL::route('index', array()) }}/js/app.js"></script>
 	
 	@yield('scripts')

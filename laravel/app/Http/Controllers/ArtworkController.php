@@ -27,11 +27,14 @@ class ArtworkController extends Controller {
 	public function index($id)
 	{
 		$artwork = \App\Artwork::where('id', '=', $id)->first();
+		$artwork->num_views = $artwork->num_views + 1;
+		$artwork->save();
 		return view('artwork',
 		[	'artwork'   => $artwork
 		,	'author'    => $artwork->user
 		,	'license'   => $artwork->license
 		,	'medialist' => $artwork->media
+		,	'tags'      => $artwork->tags
 		]);
 	}
 }
