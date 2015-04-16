@@ -29,7 +29,9 @@ class IndexController extends Controller {
 	 */
 	public function index()
 	{
-		return view('index', ['artworks' => \App\Artwork::orderBy('created_at')->simplePaginate(20)]);
+		return view('index',
+		[	'artworks' => \App\Artwork::orderBy('created_at', 'desc')->simplePaginate(20)
+		]);
 	}
 
 }

@@ -106,10 +106,13 @@ body {
 	background-color: #E8E8E8;
 	border: 1px solid #888888;
 	border-radius: 5px;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
 }
 .panel-image-short
 {
-	max-height: 100px !important;
+	height: 100px !important;
 }
 .panel .panel-image img
 {

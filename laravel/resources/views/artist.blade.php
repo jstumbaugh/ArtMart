@@ -12,7 +12,11 @@
 					</div>
 					<div class="panel-body">
 						<div class="panel-image-short panel-image">
-							<img src="{{ $artist->avatar_url }}"/>
+							@if ($artist->avatar_url != "")
+								<img src="{{ $artist->avatar_url }}"/>
+							@else
+								[no avatar]
+							@endif
 						</div>
 					</div>
 				</div>

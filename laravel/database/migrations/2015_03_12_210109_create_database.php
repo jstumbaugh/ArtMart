@@ -65,6 +65,8 @@ class CreateDatabase extends Migration {
 			$table->string('title');
 			$table->text('description')->default('');
 			$table->decimal('price', 10, 2);
+			$table->integer('num_views')->unsigned()->default(0);
+			$table->integer('num_purchases')->unsigned()->default(0);
 			$table->timestamps();
 		});
 		
@@ -73,8 +75,10 @@ class CreateDatabase extends Migration {
 			$table->increments('id');
 			$table->integer('artwork_id')->unsigned()->default(0);
 			$table->foreign('artwork_id')->references('id')->on('artworks');
-			$table->string('name');
+			$table->string ('name');
 			$table->timestamps();
+			$table->unique(array('artwork_id', 'name'));
+			$table->index('name');
 		});
 		
 		Schema::create('mediatypes', function(Blueprint $table)
