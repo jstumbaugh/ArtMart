@@ -34,10 +34,10 @@ Route::get('artists',
 ,	'uses' => 'PeopleController@index'
 ]);
 
-Route::get('upload',
-[	'as'   => 'upload'
-,	'uses' => 'UploadController@index'
-]);
+Route::get('upload', function() {
+  return View::make('upload');
+});
+Route::post('ImageUpload', 'UploadController@upload');
 
 Route::controllers(
 [	'auth'     => 'Auth\AuthController'

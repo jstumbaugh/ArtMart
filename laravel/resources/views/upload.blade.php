@@ -1,21 +1,14 @@
 @extends('app')
 @section('content')
  
-    <form action="add" method="post" enctype="multipart/form-data">
-        <input type="file" name="filefield">
+    <form action="ImageUpload" method="post" enctype="multipart/form-data">
+      <p>Artwork to Upload:  <input type="file" name="filefield"> </p>
+       <p> Name of Artwork: <input type="text" name="Artwork Name"></p>
+       <p>  Name of Artist: <input type="text" name="Artist"></p>
+       <p>Price:  <input type="text" name="Price"></p>
+       <p>Tags: <input type="text" name="tags"></p>
         <input type="submit">
     </form>
- 
- <h1> Pictures list</h1>
- 
- <div class="row">
- 
-    <ul>
- @foreach($entries as $entry)
-        <li>{{entry->filename}}</li>
- @endforeach
-    </ul>
- </div>
- 
+
 @endsection
-@stop
+@stopx
