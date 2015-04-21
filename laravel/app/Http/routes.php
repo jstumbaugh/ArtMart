@@ -40,6 +40,8 @@ Route::get('upload',
 ,	'middleware' => 'auth'
 ]);
 
+Route::get('search', 'SearchController@search');
+
 #Route::get('upload', function() {
 #  return View::make('upload');
 #});
