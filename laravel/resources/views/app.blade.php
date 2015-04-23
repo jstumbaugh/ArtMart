@@ -48,9 +48,9 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden-xs">
-						<form class="navbar-form" role="search" name="search-main">
+						<form class="navbar-form" role="search" name="search-main" action="search" method="GET">
 							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" />
+								<input type="text" class="form-control" placeholder="Search" name="srch_term" id="srch-term" />
 								<div class="input-group-btn">
 									<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
 								</div>

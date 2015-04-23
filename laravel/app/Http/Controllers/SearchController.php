@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use Request;
 
 class SearchController extends Controller {
 
@@ -23,9 +24,9 @@ class SearchController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function search($query)
+	public function search()
 	{
-		var_dump($query);
+		$query = Request::query("srch_term");
 		return view('search',
 		[	'artworks' => \App\Artwork::search($query)->get()	
 		]);
