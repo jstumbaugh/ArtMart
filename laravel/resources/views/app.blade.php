@@ -9,7 +9,7 @@
 	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Montserrat'>
 	<link rel="stylesheet" type='text/css' href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/bootstrap.min.css">
-	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/bootstrap-tagsinput.min.css">
+	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/bootstrap-tagsinput.css">
 	<link rel="stylesheet" type='text/css' href="{{ URL::route('index', array()) }}/css/app.css">
 </head>
 <body>

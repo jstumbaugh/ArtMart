@@ -38,4 +38,16 @@ $(document).ready(function() {
 	$carousel.swipeleft(function() {  
 		$(this).carousel('next');
 	});
+	
+	// Client-side numeric validation:
+	$('.input-numeric').keypress(function(e) {
+		var a = [];
+		var k = e.which;
+
+		for (i = 48; i < 58; i++)
+			a.push(i);
+
+		if (!(a.indexOf(k)>=0))
+			e.preventDefault();
+	});
 });

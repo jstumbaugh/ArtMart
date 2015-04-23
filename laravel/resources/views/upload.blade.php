@@ -13,35 +13,47 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Artwork to Upload:</label>
 							<div class="col-md-6">
-								<input type="file" class="form-control name="filefield" />
+								<input type="file" class="form-control" name="filefield" />
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name of Artwork:</label>
+							<label class="col-md-4 control-label">Title:</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control name="Artwork Name" />
+								<input type="text" class="form-control" name="title" />
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name of Artist:</label>
+							<label class="col-md-4 control-label">Description:</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control name="Artist" />
+								<textarea class="form-control" rows="3" name="description"></textarea>
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="col-md-4 control-label">Price:</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control name="Price" />
+								<div class="input-group">
+									<div class="input-group-addon">$</div>
+										<input type="number" class="form-control input-numeric" min="0" step="1" class="form-control name="price" />
+									<div class="input-group-addon">.00</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-md-4 control-label">License:</label>
+							<div class="col-md-6">
+								<select class="form-control" name="license">
+								</select>
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="col-md-4 control-label">Tags:</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control name="tags" />
+								<input type="text" class="form-control" name="tags" />
 							</div>
 						</div>
 						

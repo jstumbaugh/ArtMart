@@ -43,8 +43,11 @@ class UploadController extends Controller {
 	 * @return Response
 	 */
 	public function upload() {
-		// get all of the post data
+		$user = Auth::user();
+		
+		// get post data
 		$file = array('image' => Input::file('filefield'));
+		$title = Input::get('title');
 		
 		// set up rules
 		$name = "youMessedUpSomeWhere";
