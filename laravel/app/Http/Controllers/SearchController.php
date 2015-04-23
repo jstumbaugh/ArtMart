@@ -23,10 +23,12 @@ class SearchController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function search()
+	public function search($query)
 	{
-		//$results = \App\Search::search()->get();
-		return view('search');
+		var_dump($query);
+		return view('search',
+		[	'artworks' => \App\Artwork::search($query)->get()	
+		]);
 	}
 
 }
