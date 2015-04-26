@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 	<div class="container">
 		<div class="page-header">
 			<h1>{{ $artwork->title }} <span class="lead">by</span>
@@ -50,6 +51,21 @@
 							{{ $license->name }} @if($license->acro != "") ({{ $license->acro }}) @endif
 						</a></p>
 						<p><b>Price</b>: ${{ $artwork->price }}</p>
+						<!-- Payment Button Goes Here -->
+						<form action="" method="POST">
+							<script
+								src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+								data-key="pk_test_BwFKU2ablxqgWyl93vGAHTzx"
+								data-amount="{{ $artwork->price * 100}}"
+								data-name="{{$artwork->title}}"
+								data-description="${{ $artwork->price }}"
+								data-image="{{ $medialist[0]->link }}">
+							</script>
+						</form>
+
+
+						<!-- <button id="customButton">Purchase</button> -->
+
 					</div>
 				</div>
 			</div>

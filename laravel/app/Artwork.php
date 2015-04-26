@@ -89,4 +89,17 @@ class Artwork extends Model {
 	{
 		return $query->orderBy('num_purchases', 'desc')->orderBy('num_views', 'desc')->orderBy('created_at', 'desc');
 	}
+
+	/**
+	 *	Initial Search function
+	 *	@return Search query
+	*/
+	public function scopeSearch($query, $queryString)
+	{ 
+		//var_dump($queryString);
+		$percent = "%";
+		$aggQuery = $percent.$queryString.$percent;
+		var_dump($aggQuery);
+		$query->where('title', 'like', $aggQuery);
+	}
 }

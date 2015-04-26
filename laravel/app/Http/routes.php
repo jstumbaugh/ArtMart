@@ -34,17 +34,27 @@ Route::get('artists',
 ,	'uses' => 'PeopleController@index'
 ]);
 
-Route::get('upload', function() {
-  return View::make('upload');
-});
-Route::post('ImageUpload', 'UploadController@upload');
+Route::get('upload',
+[	'as'         => 'upload_form'
+,	'uses'       => 'UploadController@index'
+,	'middleware' => 'auth'
+]);
+
+Route::get('search', 
+[ 	'as' 	=> 'search'
+,	'uses' => 'SearchController@search'
+]);
+
+#Route::get('upload', function() {
+#  return View::make('upload');
+#});
+Route::post('ImageUpload',
+[	'as'         => 'upload_post'
+,	'uses'       => 'UploadController@upload'
+,	'middleware' => 'auth'
+]);
 
 Route::controllers(
 [	'auth'     => 'Auth\AuthController'
 ,	'password' => 'Auth\PasswordController'
 ]);
-
-/*Route::get('upload', function() {
-  return View::make('pages.upload');
-});
-Route::post('apply/upload', 'UploadController@upload');*/
