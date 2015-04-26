@@ -7,31 +7,6 @@ use DB;
 
 class UploadController extends Controller {
 
-/*
-$array = Input::all();                // This pulls the fields used to name the file
-$blah = array_slice($array, 1, 3, true);
-$name = implode("_",$blah);
- 
-      $destinationPath = 'uploads'; // upload path to save the file
-      $extension = Input::file('filefield')->getClientOriginalExtension(); // getting image extension
-      $fileName = $name.'.'.$extension; // renameing image
-      Input::file('filefield')->move($destinationPath, $fileName); // uploading file to given path
-      // sending back with message
-      Session::flash('success', 'Upload successfully'); 
-      return Redirect::to('home');
-    }
-  }
-=======*/
-	/*
-	|--------------------------------------------------------------------------
-	| Upload Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller handles the upload form and the POST action for uploads.
-	| User is required to be authenticated to access these methods.
-	|
-	*/
-
 	/**
 	 * Create a new controller instance. Require user to be authenticated.
 	 *
@@ -68,38 +43,50 @@ $name = implode("_",$blah);
     $tags = Input::get('tags');
     $id = Auth::id();
 
-    //OPtion One for SQL
-    //$artwork_id = DB::table('users')->insertGetId(
-    //array('email' => 'john@example.com', 'votes' => 0)
-    //);
 
-    //Option Two
-    //DB::insert('insert into artworks (user_id, license_id, title, description, price ,num_views, num_purchased) values (?, ?, ?, ?, ?, ?, ?)', array($id, $license, $title, $descripion, $price, 0, 0));
-    $results = DB::select('select id from users where id = ?', array(1));
-     $hello = "hello";
-    echo $hello;
-    echo gettype($results);
-    $resultsa = (array) $results;
-    $results = implode('.',$resultsa);
-
-    //echo $results;
-		// do the upload
-		$destinationPath = 'uploads';
-		$extension = Input::file('filefield')->getClientOriginalExtension();
+    // do the upload
+    $destinationPath = 'uploads';
+    $extension = Input::file('filefield')->getClientOriginalExtension();
 
     // Upload the Main Image
-		$fileName = $title.'.'.$extension;
-    //$fileName = $title.'.'.$results.'.'.$extension;
-		Input::file('filefield')->move($destinationPath, $fileName);
+    $fileName = $title.'.'.$extension;
+    $fileName = $title.'_'.$id.'.'.$extension;
+    Input::file('filefield')->move($destinationPath, $fileName);
 
-   /* // Upload the Thumbnail
-    $thumbnailName = $title.'_'.'thumbnail'.$extension;
+    // Upload the Thumbnail
+    $thumbnailName = $title.'_'.'thumbnail.'.$extension;
     Input::file('thumbnail')->move($destinationPath, $thumbnailName);
+    $thumbnailPath = '192.168.33.10/laravel/public/uploads/'.$thumbnailName;
+    $filePath = '192.168.33.10/laravel/public/uploads/'.$fileName;
 
 
-*/
+
+    //OPtion One for SQL
+    //$artwork_id = DB::table('users')->insertGetId(array('email' => 'john@example.com', 'votes' => 0));
+    //$name = DB::table('users')->where('name', 'John')->pluck('name');
+    //$results = DB::table('users')->where('id','3')->pluck('id');
+        
+  
+   //Added to artworks Table First.
+
+    $lastArt = DB::table('artworks')->insertGetId(array('user_id'=>$id,
+    'license_id'=>$license, 'title'=>$title, 'description'=>$description,
+    'price'=>$price, 'num_views'=>0, 'num_purchases'=>0));
+
+
+    //Then Media.
+    $mediaId = DB::table('media')->insertGetId(array('artwork_id'=>$lastArt,
+    'type_id'=>1, 'order'=>1, 'link'=>$filePath,'thumb'=>$thumbnailPath));
+
+
+    //Lastly the Tags Table.
 		
-		//return Redirect::to('home');
+
+
+    // Redirects to the most recently added artwork.
+    
+    $redirectAddress = 'artwork/'.$lastArt;
+		return Redirect::to($redirectAddress);
 	}
 }
 
