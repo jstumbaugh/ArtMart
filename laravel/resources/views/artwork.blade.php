@@ -25,7 +25,7 @@
 						<div class="carousel-imagebox">
 							<span class="carousel-helper"></span>
 							<a href="#" data-toggle="modal" data-target="#lightbox">
-								<img src="{{ $media->link }}" alt="...">
+								<img src="{{ $media->url_link() }}" alt="...">
 							</a>
 						</div>
 					</div>
@@ -59,7 +59,7 @@
 								data-amount="{{ $artwork->price * 100}}"
 								data-name="{{$artwork->title}}"
 								data-description="${{ $artwork->price }}"
-								data-image="{{ $medialist[0]->link }}">
+								data-image="{{ $medialist[0]->url_link() }}">
 							</script>
 						</form>
 

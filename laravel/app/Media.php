@@ -46,4 +46,33 @@ class Media extends Model {
 	{
 		return $this->belongsTo('\App\MediaType');
 	}
+	
+	/**
+	 * Formatted Link URL.
+	 * 
+	 * @return URL link
+	 */
+	public function url_link()
+	{
+		$link = $this->link;
+		if(starts_with($link, 'http'))
+			return $link;
+		else
+			return route('index', array()) . '/uploads/'. rawurlencode($link);
+	}
+	
+	
+	/**
+	 * Formatted Thumb URL.
+	 * 
+	 * @return URL thumb
+	 */
+	public function url_thumb()
+	{
+		$thumb = $this->thumb;
+		if(starts_with($thumb, 'http'))
+			return $thumb;
+		else
+			return route('index', array()) . '/uploads/'. rawurlencode($thumb);
+	}
 }

@@ -20,7 +20,7 @@
 										</div>
 										<div class="panel-body">
 											<div class="panel-image">
-												<img src="{{ $artwork->media->first()->thumb }}"/>
+												<img src="{{ $artwork->media->first()->url_thumb() }}"/>
 											</div>
 											<div class="panel-description">
 												<ul>
@@ -69,7 +69,7 @@
 										</div>
 										<div class="panel-body">
 											<div class="panel-image">
-												<img src="{{ $artwork->media->first()->thumb }}"/>
+												<img src="{{ $artwork->media->first()->url_thumb() }}"/>
 											</div>
 											<div class="panel-description">
 												<ul>

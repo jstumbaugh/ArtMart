@@ -24,11 +24,10 @@ class IndexController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{
+	{		
 		return view('index',
 		[	'artworks'    => \App\Artwork::newest()->get() #->simplePaginate(20)
 		,	'artworkshot' => \App\Artwork::hottest()->get()
 		]);
 	}
-
 }

@@ -101,7 +101,7 @@ body {
 }
 .panel .panel-image
 {
-	max-height: 160px;
+	height: 160px;
 	overflow: hidden;
 	background-color: #E8E8E8;
 	border: 1px solid #888888;

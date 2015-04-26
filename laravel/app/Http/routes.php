@@ -45,9 +45,6 @@ Route::get('search',
 ,	'uses' => 'SearchController@search'
 ]);
 
-#Route::get('upload', function() {
-#  return View::make('upload');
-#});
 Route::post('ImageUpload',
 [	'as'         => 'upload_post'
 ,	'uses'       => 'UploadController@upload'
