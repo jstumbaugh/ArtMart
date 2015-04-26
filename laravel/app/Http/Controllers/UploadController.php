@@ -1,9 +1,9 @@
 <?php namespace App\Http\Controllers;
+use Auth;
 use Input;
-use Validator;
 use Redirect;
 use Request;
-use Session;
+use DB;
 
 class UploadController extends Controller {
 
@@ -58,29 +58,14 @@ $name = implode("_",$blah);
 	 * @return Response
 	 */
 	public function upload() {
-		$user = Auth::user();
 		
 		// get post data
 		$file = array('image' => Input::file('filefield'));
 		$title = Input::get('title');
-
-		
-		// set up rules
-		$name = "youMessedUpSomeWhere";
-		$array = Input::all();
-		$blah = array_slice($array, 1, 2, true);
-		$title = implode("",$blah);
-
-    $blah = array_slice($array, 2, 3, true);
-    $description = implode("",$blah);
-
-    $blah = array_slice($array, 3, 4, true);
-    $Pprice = implode("",$blah);
-
-    $blah = array_slice($array, 4, 5, true);
-    $license = implode("",$blah);
-
-
+    $price = Input::get('price');
+    $description = Input::get('description');
+    $license = Input::get('license');
+    $tags = Input::get('tags');
     $id = Auth::id();
 
     //OPtion One for SQL
@@ -89,27 +74,32 @@ $name = implode("_",$blah);
     //);
 
     //Option Two
-    DB::insert('insert into artworks (user_id, license_id, title, description, price ,num_views, num_purchased) values (?, ?, ?, ?, ?, ?, ?)', array($id, $license, $title, $descripion, $price, 0, 0));
+    //DB::insert('insert into artworks (user_id, license_id, title, description, price ,num_views, num_purchased) values (?, ?, ?, ?, ?, ?, ?)', array($id, $license, $title, $descripion, $price, 0, 0));
+    $results = DB::select('select id from users where id = ?', array(1));
+     $hello = "hello";
+    echo $hello;
+    echo gettype($results);
+    $resultsa = (array) $results;
+    $results = implode('.',$resultsa);
 
-
+    //echo $results;
 		// do the upload
 		$destinationPath = 'uploads';
 		$extension = Input::file('filefield')->getClientOriginalExtension();
 
     // Upload the Main Image
 		$fileName = $title.'.'.$extension;
+    //$fileName = $title.'.'.$results.'.'.$extension;
 		Input::file('filefield')->move($destinationPath, $fileName);
 
-    // Upload the Thumbnail
-    $thumbnailName = $name.'_'.'thumbnail'.$extension;
+   /* // Upload the Thumbnail
+    $thumbnailName = $title.'_'.'thumbnail'.$extension;
     Input::file('thumbnail')->move($destinationPath, $thumbnailName);
 
 
-
+*/
 		
-		// return success
-		Session::flash('success', 'Upload successfully'); 
-		return Redirect::to('home');
+		//return Redirect::to('home');
 	}
 }
 

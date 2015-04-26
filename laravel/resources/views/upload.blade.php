@@ -1,5 +1,4 @@
 @extends('app')
-@section('content')
  
    <!-- <form action="ImageUpload" method="post" enctype="multipart/form-data" style="margin-left:37%">
        <p > Artwork to Upload: <input type="file" name="filefield" required> </p>
@@ -91,7 +90,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Tags:</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="tags" />
+								<input type="text" class="form-control" name="tags" placeholder="tag1, tag2, tag3, ..."/>
 							</div>
 						</div>
 						
