@@ -80,8 +80,18 @@ $name = implode("_",$blah);
     $blah = array_slice($array, 4, 5, true);
     $license = implode("",$blah);
 
-    
- 
+
+    $id = Auth::id();
+
+    //OPtion One for SQL
+    //$artwork_id = DB::table('users')->insertGetId(
+    //array('email' => 'john@example.com', 'votes' => 0)
+    //);
+
+    //Option Two
+    DB::insert('insert into artworks (user_id, license_id, title, description, price ,num_views, num_purchased) values (?, ?, ?, ?, ?, ?, ?)', array($id, $license, $title, $descripion, $price, 0, 0));
+
+
 		// do the upload
 		$destinationPath = 'uploads';
 		$extension = Input::file('filefield')->getClientOriginalExtension();
