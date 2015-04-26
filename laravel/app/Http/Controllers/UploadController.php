@@ -11,11 +11,11 @@ public function upload() {
   // setting up rules
   $name = "youMessedUpSomeWhere";
 
-$array = Input::all();
-$blah = array_slice($array, 0, 2, true);
+$array = Input::all();                // This pulls the fields used to name the file
+$blah = array_slice($array, 1, 3, true);
 $name = implode("_",$blah);
  
-      $destinationPath = 'uploads'; // upload path
+      $destinationPath = 'uploads'; // upload path to save the file
       $extension = Input::file('filefield')->getClientOriginalExtension(); // getting image extension
       $fileName = $name.'.'.$extension; // renameing image
       Input::file('filefield')->move($destinationPath, $fileName); // uploading file to given path
