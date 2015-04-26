@@ -28,7 +28,9 @@ class SearchController extends Controller {
 	{
 		$query = Request::query("srch_term");
 		return view('search',
-		[	'artworks' => \App\Artwork::search($query)->get()	
+		[	'topResults' => \App\Artwork::topSearch($query)->get(),
+			'titleResults' => \App\Artwork::titleSearch($query)->get(),
+			'descriptionResults' => \App\Artwork::descriptionSearch($query)->get()
 		]);
 	}
 

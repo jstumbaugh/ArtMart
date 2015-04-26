@@ -48,7 +48,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden-xs">
-						<form class="navbar-form" role="search" name="search-main" action="search" method="GET">
+						<form class="navbar-form" role="search" name="search-main" action="{{ URL::route('index', array() ) }}/search" method="GET">
 							<div class="input-group">
 								<input type="text" class="form-control" placeholder="Search" name="srch_term" id="srch-term" />
 								<div class="input-group-btn">

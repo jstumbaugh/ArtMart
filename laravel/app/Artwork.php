@@ -94,12 +94,28 @@ class Artwork extends Model {
 	 *	Initial Search function
 	 *	@return Search query
 	*/
-	public function scopeSearch($query, $queryString)
+	public function scopeTopSearch($query, $queryString)
 	{ 
 		//var_dump($queryString);
 		$percent = "%";
 		$aggQuery = $percent.$queryString.$percent;
 		var_dump($aggQuery);
 		$query->where('title', 'like', $aggQuery);
+	}
+
+	public function scopeTitleSearch($query, $queryString)
+	{ 
+		//var_dump($queryString);
+		$percent = "%";
+		$aggQuery = $percent.$queryString.$percent;
+		$query->where('title', 'like', $aggQuery);
+	}
+
+	public function scopeDescriptionSearch($query, $queryString)
+	{ 
+		//var_dump($queryString);
+		$percent = "%";
+		$aggQuery = $percent.$queryString.$percent;
+		$query->where('description', 'like', $aggQuery);
 	}
 }
