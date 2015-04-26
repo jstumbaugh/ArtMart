@@ -1,8 +1,7 @@
 @extends('app')
-<<<<<<< HEAD
 @section('content')
  
-    <form action="ImageUpload" method="post" enctype="multipart/form-data" style="margin-left:37%">
+   <!-- <form action="ImageUpload" method="post" enctype="multipart/form-data" style="margin-left:37%">
        <p > Artwork to Upload: <input type="file" name="filefield" required> </p>
        <p> Thumbnail Photo: <input type="file" name="Thumbnail"></p>
        <p> Name of Artwork: <input type="text" name="ArtworkName" placeholder="e.g. Solider Sprite" required></p>
@@ -22,9 +21,7 @@
        <p> Tags: <input type="text" name="tags"></p>
         <input type="submit" value="Upload">
     </form>
-
-
-=======
+-->
 
 @section('content')
 <div class="container-fluid">
@@ -40,6 +37,13 @@
 							<label class="col-md-4 control-label">Artwork to Upload:</label>
 							<div class="col-md-6">
 								<input type="file" class="form-control" name="filefield" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Thumbnail to Upload:</label>
+							<div class="col-md-6">
+								<input type="file" class="form-control" name="thumbnail" />
 							</div>
 						</div>
 						
@@ -62,7 +66,7 @@
 							<div class="col-md-6">
 								<div class="input-group">
 									<div class="input-group-addon">$</div>
-										<input type="number" class="form-control input-numeric" min="0" step="1" class="form-control name="price" />
+										<input type="number" class="form-control input-numeric" min="0" step="1" class="form-control" name="price" />
 									<div class="input-group-addon">.00</div>
 								</div>
 							</div>
@@ -72,6 +76,14 @@
 							<label class="col-md-4 control-label">License:</label>
 							<div class="col-md-6">
 								<select class="form-control" name="license">
+									<option value="1"> All Rights Reserved</option>
+       								<option value="2"> Creative Commons Attribution</option>
+       								<option value="3"> Creative Commons Arreibution-ShareAlike</option>
+       								<option value="4"> Creative Commons Attribution-NoDerivs</option>
+       								<option value="5"> Creative Commons Attribution-NonCommercial</option>
+       								<option value="6"> Creative Commons Attribution-NonCommercial-ShareAlike</option>
+       								<option value="7"> Creative Commons Attribution-NonCOmmercial-NoDerivs</option>
+       								<option value="8"> Public Domain</option>
 								</select>
 							</div>
 						</div>
@@ -96,5 +108,4 @@
 		</div>
 	</div>
 </div>
->>>>>>> origin/master
 @endsection

@@ -7,7 +7,7 @@ use Session;
 
 class UploadController extends Controller {
 
-<<<<<<< HEAD
+/*
 $array = Input::all();                // This pulls the fields used to name the file
 $blah = array_slice($array, 1, 3, true);
 $name = implode("_",$blah);
@@ -21,7 +21,7 @@ $name = implode("_",$blah);
       return Redirect::to('home');
     }
   }
-=======
+=======*/
 	/*
 	|--------------------------------------------------------------------------
 	| Upload Controller
@@ -63,22 +63,43 @@ $name = implode("_",$blah);
 		// get post data
 		$file = array('image' => Input::file('filefield'));
 		$title = Input::get('title');
+
 		
 		// set up rules
 		$name = "youMessedUpSomeWhere";
 		$array = Input::all();
-		$blah = array_slice($array, 0, 2, true);
-		$name = implode("_",$blah);
+		$blah = array_slice($array, 1, 2, true);
+		$title = implode("",$blah);
+
+    $blah = array_slice($array, 2, 3, true);
+    $description = implode("",$blah);
+
+    $blah = array_slice($array, 3, 4, true);
+    $Pprice = implode("",$blah);
+
+    $blah = array_slice($array, 4, 5, true);
+    $license = implode("",$blah);
+
+    
  
 		// do the upload
 		$destinationPath = 'uploads';
 		$extension = Input::file('filefield')->getClientOriginalExtension();
-		$fileName = $name.'.'.$extension;
+
+    // Upload the Main Image
+		$fileName = $title.'.'.$extension;
 		Input::file('filefield')->move($destinationPath, $fileName);
+
+    // Upload the Thumbnail
+    $thumbnailName = $name.'_'.'thumbnail'.$extension;
+    Input::file('thumbnail')->move($destinationPath, $thumbnailName);
+
+
+
 		
 		// return success
 		Session::flash('success', 'Upload successfully'); 
 		return Redirect::to('home');
 	}
 }
->>>>>>> origin/master
+
