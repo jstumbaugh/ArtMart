@@ -25,9 +25,8 @@ class PeopleController extends Controller {
 	 */
 	public function people()
 	{	
-		return view('people');
-		// return view('people',
-		// [	'artists'    => \App\User::get_artists()->get()
-		// ]);
+		return view('people',
+		[	'artists'    => \App\User::all()
+		]);
 	}
 }
