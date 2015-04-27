@@ -64,6 +64,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+								<li><a href="/user/{{ Auth::user()->name }}">My Account</a></li>
 								<li><a href="{{ URL::route('index', array()) }}/upload">Upload</a></li>
 								<li><a href="{{ URL::route('index', array()) }}/auth/logout">Logout</a></li>
 							</ul>
