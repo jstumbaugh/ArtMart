@@ -55,15 +55,8 @@ class UploadController extends Controller {
 		// Upload the Thumbnail
 		$thumbnailName = $title.'_'.'thumbnail.'.$extension;
 		Input::file('thumbnail')->move($destinationPath, $thumbnailName);
-		// [JM] this was the problem -- this generates an invalid URL.
-		//$thumbnailPath = '192.168.33.10/laravel/public/uploads/'.$thumbnailName;
-		//$filePath = '192.168.33.10/laravel/public/uploads/'.$fileName;
-		
-		//OPtion One for SQL
-		//$artwork_id = DB::table('users')->insertGetId(array('email' => 'john@example.com', 'votes' => 0));
-		//$name = DB::table('users')->where('name', 'John')->pluck('name');
-		//$results = DB::table('users')->where('id','3')->pluck('id');
-			
+	
+
 		//Add to artworks Table First.
 		$lastArt = DB::table('artworks')->insertGetId(array(
 			'user_id'     => $id
@@ -84,6 +77,17 @@ class UploadController extends Controller {
 		
 		//Lastly the Tags Table.
 		//TODO tags
+
+    $tags = str_replace(' ', '', $tags);
+    $tagsArray = explode(',', $tags);
+
+    foreach( $tagsArray as $tag){
+        $tagId = DB::table('tags')->insertGetId(array(
+        'artwork_id' => $lastArt
+        ,'name' => $tag
+    ));
+    }
+
 		
 		// Redirect to the most recently added artwork.
 		$redirectAddress = route('artwork', ['id' => $lastArt]);
