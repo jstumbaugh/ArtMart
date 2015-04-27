@@ -30,7 +30,8 @@ class SearchController extends Controller {
 		return view('search',
 		[	'topResults' => \App\Artwork::topSearch($query)->get(),
 			'titleResults' => \App\Artwork::titleSearch($query)->get(),
-			'descriptionResults' => \App\Artwork::descriptionSearch($query)->get()
+			'descriptionResults' => \App\Artwork::descriptionSearch($query)->get(),
+			'originalQuery' => $query
 		]);
 	}
 
