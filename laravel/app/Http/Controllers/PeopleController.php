@@ -19,15 +19,15 @@ class PeopleController extends Controller {
 	public function __construct() {}
 
 	/**
-	 * Show the main marketplace.
+	 * Show all artists.
 	 *
 	 * @return Response
 	 */
 	public function people()
 	{	
+		return view('people');
 		// return view('people',
 		// [	'artists'    => \App\User::get_artists()->get()
 		// ]);
-		return view('people');
 	}
 }

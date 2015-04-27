@@ -5,7 +5,7 @@ class SearchController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Home Controller
+	| Search Controller
 	|--------------------------------------------------------------------------
 	|
 	| This controller displays search results given a query string.
