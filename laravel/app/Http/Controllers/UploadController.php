@@ -24,6 +24,8 @@ class UploadController extends Controller {
 	 */
 	public function index()
 	{
+		//$createdTime = date("Y-m-d h:i:s");
+		//var_dump($createdTime);
 		return view('upload');
 	}
 
@@ -42,6 +44,7 @@ class UploadController extends Controller {
 		$license = Input::get('license');
 		$tags = Input::get('tags');
 		$id = Auth::id();
+		$createdTime = date("Y-m-d h:i:s");
 		
 		// do the upload
 		$destinationPath = 'uploads';
@@ -64,6 +67,7 @@ class UploadController extends Controller {
 		,	'title'       => $title
 		,	'description' => $description
 		,	'price'       => $price
+		, 	'created_at'  => $createdTime
 		));
 		
 		//Then Media.
