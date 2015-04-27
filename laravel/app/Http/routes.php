@@ -31,7 +31,7 @@ Route::get('user/{name}',
 
 Route::get('artists',
 [	'as'   => 'people'
-,	'uses' => 'PeopleController@index'
+,	'uses' => 'PeopleController@people'
 ]);
 
 Route::get('upload',

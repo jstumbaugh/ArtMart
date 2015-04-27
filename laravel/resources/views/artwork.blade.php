@@ -52,7 +52,7 @@
 						</a></p>
 						<p><b>Price</b>: ${{ $artwork->price }}</p>
 						<!-- Payment Button Goes Here -->
-						<form action="" method="POST">
+						<form action="" method="">
 							<script
 								src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 								data-key="pk_test_BwFKU2ablxqgWyl93vGAHTzx"

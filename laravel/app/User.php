@@ -84,4 +84,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->artworks()->sum('num_purchases');
 	}
+
+	public function get_artists()
+	{
+		return this;
+	}
 }
