@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use Auth;
 
 class ArtistController extends Controller {
 
@@ -24,9 +25,10 @@ class ArtistController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($name)
+	public function index($id)
 	{
-		$artist = \App\User::where('name', '=', $name)->first();
+		$id = Auth::id();
+		$artist = \App\User::where('id', '=', $id)->first();
 		return view('artist',
 		[	'artist'    => $artist
 		,	'artworks'  => $artist->artworks
