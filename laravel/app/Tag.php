@@ -31,9 +31,9 @@ class Tag extends Model {
 	 * 
 	 * @return Artwork model array
 	 */
-	public function artworks()
+	public function artwork()
 	{
-		return $this->hasMany('\App\Artwork');
+		return $this->belongsTo('\App\Artwork'); #->orderBy('num_purchases', 'desc')->orderBy('num_views', 'desc')->orderBy('created_at', 'desc');
 	}
 
 	public function scopeTagSearch($query, $queryString)

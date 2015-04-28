@@ -31,13 +31,14 @@ class SearchController extends Controller {
 		$tagArtworkArray = [];
 		foreach($tags as $tag) 
 		{
-			//var_dump($tag->artworks());
+			array_push($tagArtworkArray, $tag->artwork);
+			#var_dump($tag->artwork);
 		}
 		return view('search',
 		[	'topResults' => \App\Artwork::topSearch($query)->get(),
 			'titleResults' => \App\Artwork::titleSearch($query)->get(),
 			'descriptionResults' => \App\Artwork::descriptionSearch($query)->get(),
-			'tagResults' => \App\Tag::tagSearch($query)->get(),
+			'tagResults' => $tagArtworkArray,
 			'originalQuery' => $query
 		]);
 	}

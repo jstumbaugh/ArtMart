@@ -51,6 +51,11 @@
 							{{ $license->name }} @if($license->acro != "") ({{ $license->acro }}) @endif
 						</a></p>
 						<p><b>Price</b>: ${{ $artwork->price }}</p>
+						<p><b>Tags</b>:
+							@foreach ($tags as $tag)
+								{{ $tag->name }},
+							@endforeach
+						</p>
 						<!-- Payment Button Goes Here -->
 						<form action="" method="">
 							<script
