@@ -2,6 +2,8 @@
 @extends('app')
 
 @section('content')
+	@foreach ($tagResults as $tag)
+	@endforeach
 	@if (!empty($topResults[0]) || !empty($titleResults[0]) || !empty($descriptionResults[0]))
 		@if(empty($topResults[0]))
 		@else

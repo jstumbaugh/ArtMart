@@ -35,4 +35,11 @@ class Tag extends Model {
 	{
 		return $this->hasMany('\App\Artwork');
 	}
+
+	public function scopeTagSearch($query, $queryString)
+	{
+		$percent = "%";
+		$aggQuery = $percent.$queryString.$percent;
+		return $query->where('name', 'like', $aggQuery);
+	}
 }

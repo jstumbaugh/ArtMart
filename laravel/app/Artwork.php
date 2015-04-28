@@ -98,20 +98,20 @@ class Artwork extends Model {
 	{ 
 		$percent = "%";
 		$aggQuery = $percent.$queryString.$percent;
-		$query->where('title', 'like', $aggQuery);
+		return $query->where('title', 'like', $aggQuery)->where('description', 'like', $aggQuery);
 	}
 
 	public function scopeTitleSearch($query, $queryString)
 	{ 
 		$percent = "%";
 		$aggQuery = $percent.$queryString.$percent;
-		$query->where('title', 'like', $aggQuery);
+		 return $query->where('title', 'like', $aggQuery);
 	}
 
 	public function scopeDescriptionSearch($query, $queryString)
 	{ 
 		$percent = "%";
 		$aggQuery = $percent.$queryString.$percent;
-		$query->where('description', 'like', $aggQuery);
+		return $query->where('description', 'like', $aggQuery);
 	}
 }

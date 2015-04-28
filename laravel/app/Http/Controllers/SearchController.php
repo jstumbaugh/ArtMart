@@ -27,10 +27,17 @@ class SearchController extends Controller {
 	public function search()
 	{
 		$query = Request::query("srch_term");
+		$tags = \App\Tag::tagSearch($query)->get();
+		$tagArtworkArray = [];
+		foreach($tags as $tag) 
+		{
+			//var_dump($tag->artworks());
+		}
 		return view('search',
 		[	'topResults' => \App\Artwork::topSearch($query)->get(),
 			'titleResults' => \App\Artwork::titleSearch($query)->get(),
 			'descriptionResults' => \App\Artwork::descriptionSearch($query)->get(),
+			'tagResults' => \App\Tag::tagSearch($query)->get(),
 			'originalQuery' => $query
 		]);
 	}
