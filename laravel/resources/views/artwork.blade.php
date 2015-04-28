@@ -52,8 +52,10 @@
 						</a></p>
 						<p><b>Price</b>: ${{ $artwork->price }}</p>
 						<p><b>Tags</b>:
+							<?php $i=1; ?>
 							@foreach ($tags as $tag)
-								{{ $tag->name }},
+								<a href="{{ URL::route('index', array()) }}/search?srch_term={{ $tag->name }}">{{ $tag->name }}</a>@if( $i < count($tags)), @endif
+								<?php $i++; ?>
 							@endforeach
 						</p>
 						<!-- Payment Button Goes Here -->
@@ -64,7 +66,7 @@
 								data-amount="{{ $artwork->price * 100}}"
 								data-name="{{$artwork->title}}"
 								data-description="${{ $artwork->price }}"
-								data-image="{{ $medialist[0]->url_link() }}">
+								data-image="{{ $medialist[0]->url_thumb() }}">
 							</script>
 						</form>
 

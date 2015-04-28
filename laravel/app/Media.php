@@ -48,7 +48,7 @@ class Media extends Model {
 	}
 	
 	/**
-	 * Formatted Link URL.
+	 * Formatted & Encoded Link URL.
 	 * 
 	 * @return URL link
 	 */
@@ -61,9 +61,8 @@ class Media extends Model {
 			return route('index', array()) . '/uploads/'. rawurlencode($link);
 	}
 	
-	
 	/**
-	 * Formatted Thumb URL.
+	 * Formatted & Encoded Thumb URL.
 	 * 
 	 * @return URL thumb
 	 */
@@ -74,5 +73,34 @@ class Media extends Model {
 			return $thumb;
 		else
 			return route('index', array()) . '/uploads/'. rawurlencode($thumb);
+	}
+	
+	/**
+	 * Formatted & Unencoded Link URL.
+	 * 
+	 * @return URL link
+	 */
+	public function raw_link()
+	{
+		$link = $this->link;
+		if(starts_with($link, 'http'))
+			return $link;
+		else
+			return route('index', array()) . '/uploads/'. $link;
+	}
+	
+	
+	/**
+	 * Formatted & Unencoded Thumb URL.
+	 * 
+	 * @return URL thumb
+	 */
+	public function raw_thumb()
+	{
+		$thumb = $this->thumb;
+		if(starts_with($thumb, 'http'))
+			return $thumb;
+		else
+			return route('index', array()) . '/uploads/'. $thumb;
 	}
 }

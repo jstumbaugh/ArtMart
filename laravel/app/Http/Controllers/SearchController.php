@@ -32,7 +32,6 @@ class SearchController extends Controller {
 		foreach($tags as $tag) 
 		{
 			array_push($tagArtworkArray, $tag->artwork);
-			#var_dump($tag->artwork);
 		}
 		return view('search',
 		[	'topResults' => \App\Artwork::topSearch($query)->get(),

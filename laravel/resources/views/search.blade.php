@@ -7,7 +7,7 @@
 		@else
 			<div class="container">
 				<div class="page-header">
-					<h1>Top Results</h1>
+					<h1>Top Results for "{{ $originalQuery }}"</h1>
 				</div>
 				<div id="carousel-artwork-new" class="carousel slide" data-ride="carousel" data-interval="false">
 					<div class="carousel-inner" role="listbox">
@@ -24,7 +24,7 @@
 												</div>
 												<div class="panel-body">
 													<div class="panel-image">
-														<img src="{{ $artwork->media->first()->thumb }}"/>
+														<img src="{{ $artwork->media->first()->url_thumb() }}"/>
 													</div>
 													<div class="panel-description">
 														<ul>
@@ -57,7 +57,7 @@
 			</div>
 		@endif
 		<!-- END TOP RESULTS -->
-		@if(empty($tagResults[0]))
+		@if(empty($tagResults))
 		@else
 			<div class="container">
 				<div class="page-header">
@@ -78,7 +78,7 @@
 												</div>
 												<div class="panel-body">
 													<div class="panel-image">
-														<img src="{{ $artwork->media->first()->thumb }}"/>
+														<img src="{{ $artwork->media->first()->url_thumb() }}"/>
 													</div>
 													<div class="panel-description">
 														<ul>
@@ -132,7 +132,7 @@
 												</div>
 												<div class="panel-body">
 													<div class="panel-image">
-														<img src="{{ $artwork->media->first()->thumb }}"/>
+														<img src="{{ $artwork->media->first()->url_thumb() }}"/>
 													</div>
 													<div class="panel-description">
 														<ul>
@@ -186,7 +186,7 @@
 												</div>
 												<div class="panel-body">
 													<div class="panel-image">
-														<img src="{{ $artwork->media->first()->thumb }}"/>
+														<img src="{{ $artwork->media->first()->url_thumb() }}"/>
 													</div>
 													<div class="panel-description">
 														<ul>

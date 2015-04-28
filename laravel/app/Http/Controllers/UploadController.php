@@ -51,13 +51,14 @@ class UploadController extends Controller {
 		$extension = Input::file('filefield')->getClientOriginalExtension();
 		
 		// Upload the Main Image
-		$fileName = $title.'.'.$extension;
-		$fileName = $title.'_'.$id.'.'.$extension;
+		$baseName = str_replace(' ', '_', $title);
+		$fileName = $baseName.'.'.$extension;
+		$fileName = $baseName.'_'.$id.'.'.$extension;
 		Input::file('filefield')->move($destinationPath, $fileName);
 		
 		// Upload the Thumbnail
 		if(Input::hasFile('thumbnail')){
-			$thumbnailName = $title.'_'.'thumbnail.'.$extension;
+			$thumbnailName = $baseName.'_'.$id.'_'.'thumbnail.'.$extension;
 			Input::file('thumbnail')->move($destinationPath, $thumbnailName);
 		}
 		else{
