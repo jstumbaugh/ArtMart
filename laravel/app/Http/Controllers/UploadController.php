@@ -56,8 +56,13 @@ class UploadController extends Controller {
 		Input::file('filefield')->move($destinationPath, $fileName);
 		
 		// Upload the Thumbnail
-		$thumbnailName = $title.'_'.'thumbnail.'.$extension;
-		Input::file('thumbnail')->move($destinationPath, $thumbnailName);
+		if(Input::hasFile('thumbnail')){
+			$thumbnailName = $title.'_'.'thumbnail.'.$extension;
+			Input::file('thumbnail')->move($destinationPath, $thumbnailName);
+		}
+		else{
+			$thumbnailName = $fileName;
+		}
 	
 
 		//Add to artworks Table First.

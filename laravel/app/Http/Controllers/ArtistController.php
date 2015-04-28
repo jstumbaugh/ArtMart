@@ -25,10 +25,9 @@ class ArtistController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($id)
+	public function index($name)
 	{
-		$id = Auth::id();
-		$artist = \App\User::where('id', '=', $id)->first();
+		$artist = \App\User::where('name', '=', $name)->first();
 		return view('artist',
 		[	'artist'    => $artist
 		,	'artworks'  => $artist->artworks
